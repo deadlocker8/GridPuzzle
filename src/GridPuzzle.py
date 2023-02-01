@@ -1,11 +1,15 @@
 import logging
 import os
+from typing import Dict, List
 
 from TheCodeLabs_BaseUtils.DefaultLogger import DefaultLogger
+from TheCodeLabs_BaseUtils.OverrideDecorator import override
 from TheCodeLabs_FlaskUtils import FlaskBaseApp
+from flask import Flask
+from flask_socketio import SocketIO
 
 from blueprints import General
-from logic import Constants
+from logic import Constants, events
 
 LOGGER = DefaultLogger().create_logger_if_not_exists(Constants.APP_NAME)
 
@@ -20,6 +24,21 @@ class GridPuzzle(FlaskBaseApp):
                                                     fileName=loggingSettings['fileName'],
                                                     maxBytes=loggingSettings['maxBytes'],
                                                     backupCount=loggingSettings['numberOfBackups'])
+
+    @override
+    def _create_flask_app(self):
+        app = Flask(self._rootDir)
+        socketio = SocketIO(app)
+
+        @socketio.on('gridPuzzleSubmitSolution')
+        def OnSubmitSolution(levelNumber: int, usedPositions: List, userGameData: str) -> Dict:
+            return events.OnSubmitSolution(levelNumber, usedPositions, userGameData)
+
+        @socketio.on('connect')
+        def Connect():
+            LOGGER.debug('Client connected')
+
+        return app
 
     def _register_blueprints(self, app):
         app.register_blueprint(General.construct_blueprint())

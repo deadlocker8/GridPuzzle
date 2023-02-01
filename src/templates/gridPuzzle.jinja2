@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GridPuzzle</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gridPuzzle.css') }}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% import 'gridPuzzleMacros.jinja2' as gridPuzzleMacros %}
+
+        {% set isEndOnLeftSide = false %}
+        {% if endPosition[1] == 0 %}
+            {% set isEndOnLeftSide = true %}
+        {% endif %}
+
+        <div id="main">
+            <div id="header">
+                <div id="headline">{{ levelDisplayName }}</div>
+                <a href="{{ url_for('general.grid_puzzle') }}" id="button-back">Level Select</a>
+            </div>
+
+            <div class="grid-container" data-level-number="{{ levelNumber }}">
+                <div class="grid" id="layer-1">
+                    {{ gridPuzzleMacros.drawGrid(levelData, true) }}
+
+                {{ gridPuzzleMacros.drawStart(isEndOnLeftSide, false) }}
+
+                    <div id="layer-2">
+                        {{ gridPuzzleMacros.drawGrid(levelData, false) }}
+
+                        {{ gridPuzzleMacros.drawStart(isEndOnLeftSide, true) }}
+                    </div>
+                </div>
+            </div>
+
+            <div id="buttons">
+                <div id="button-hint" class="hidden hint-button">Need a hint?</div>
+                <div id="hint" class="hidden"><span id="hint-start">Hint:</span> <span id="hint-text">{{ hint}}</span></div>
+
+                <div id="reset">
+                    <img class="arrow-button" id="button-reset" src="{{ url_for('static', filename='/images/R_Key.png') }}"/>
+                    <div>= Reset</div>
+                </div>
+
+                <img class="arrow-button" id="button-up" src="{{ url_for('static', filename='/images/Arrow_Up.png') }}"/>
+                <div class="arrow-buttons-bottom">
+                    <img class="arrow-button" id="button-left" src="{{ url_for('static', filename='/images/Arrow_Left.png') }}"/>
+                    <img class="arrow-button" id="button-down" src="{{ url_for('static', filename='/images/Arrow_Down.png') }}"/>
+                    <img class="arrow-button" id="button-right" src="{{ url_for('static', filename='/images/Arrow_Right.png') }}"/>
+                </div>
+            </div>
+
+            <div id="level-select-spacer">&nbsp;</div>
+
+            <script>
+                numberOfTutorialLevels = {{ numberOfTutorialLevels }};
+            </script>
+        </div>
+
+        <script defer src="{{ url_for('static', filename='libs/socket.io.min.js') }}" type="text/javascript"></script>
+        <script defer src="{{ url_for('static', filename='js/common.js') }}" type="text/javascript"></script>
+        <script defer src="{{ url_for('static', filename='js/gridPuzzle.js') }}" type="text/javascript"></script>
+    </body>
+</html>

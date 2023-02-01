@@ -1,0 +1,128 @@
+{% macro drawGrid(gridData, renderPuzzleElements, userGameData=None, isTutorial=false) -%}
+    {% set lastRow = namespace(value=-1) %}
+
+    {% for position, item in gridData.items() %}
+        {% if position[0] > lastRow.value %}
+            {% if not loop.first %}
+                </div>
+            {% endif %}
+
+            <div class="row">
+            {% set lastRow.value = position[0] %}
+        {% endif %}
+
+        {% if item.__class__.__name__ == 'Corner' %}
+            {{ drawCorner(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'EdgeHorizontal' %}
+            {{ drawEdgeHorizontal(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'EdgeVertical' %}
+            {{ drawEdgeVertical(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'EdgeGapHorizontal' %}
+            {{ drawEdgeGapHorizontal(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'EdgeGapVertical' %}
+            {{ drawEdgeGapVertical(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'Cell' %}
+            {{ drawCell(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'EndRight' %}
+            {{ drawEnd(position, item, renderPuzzleElements, 'end-right') }}
+        {% elif item.__class__.__name__ == 'EndTop' %}
+            {{ drawEnd(position, item, renderPuzzleElements, 'end-top') }}
+        {% elif item.__class__.__name__ == 'EndLeft' %}
+            {{ drawEnd(position, item, renderPuzzleElements, 'end-left') }}
+        {% elif item.__class__.__name__ == 'EndSpaceHorizontal' %}
+            {{ drawEndSpaceHorizontal(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'EndSpaceVertical' %}
+            {{ drawEndSpaceVertical(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'EndSpaceVerticalCell' %}
+            {{ drawEndSpaceVerticalCell(position, item, renderPuzzleElements) }}
+        {% elif item.__class__.__name__ == 'LevelSelectCell' %}
+            {{ drawLevelSelectCell(position, item, userGameData, isTutorial) }}
+        {% endif %}
+
+        {% if loop.last %}
+            </div>
+        {% endif %}
+    {% endfor %}
+{% endmacro -%}
+
+
+{% macro drawCorner(position, item, renderPuzzleElements) -%}
+    <div class="edge edge-corner {{ item.GetStyle() }}" data-row="{{ position[0] }}" data-column="{{ position[1] }}">
+        {% if item.isMandatory and renderPuzzleElements %}
+            {{ dot() }}
+        {% endif %}
+    </div>
+{% endmacro -%}
+
+{% macro drawEdgeHorizontal(position, item, renderPuzzleElements) -%}
+    <div class="edge edge-horizontal" data-row="{{ position[0] }}" data-column="{{ position[1] }}">
+        {% if item.isMandatory and renderPuzzleElements %}
+            {{ dot() }}
+        {% endif %}
+    </div>
+{% endmacro -%}
+
+{% macro drawEdgeGapHorizontal(position, item, renderPuzzleElements) -%}
+    <div class="edge edge-horizontal edge-gap edge-gap-horizontal" data-row="{{ position[0] }}" data-column="{{ position[1] }}">
+        <div class="edge-gap-end-right"></div>
+        <div class="edge-gap-end-left"></div>
+    </div>
+{% endmacro -%}
+
+{% macro drawEdgeVertical(position, item, renderPuzzleElements) -%}
+    <div class="edge edge-vertical" data-row="{{ position[0] }}" data-column="{{ position[1] }}">
+        {% if item.isMandatory and renderPuzzleElements %}
+            {{ dot() }}
+        {% endif %}
+    </div>
+{% endmacro -%}
+
+{% macro drawEdgeGapVertical(position, item, renderPuzzleElements) -%}
+    <div class="edge edge-vertical edge-gap edge-gap-vertical" data-row="{{ position[0] }}" data-column="{{ position[1] }}">
+        <div class="edge-gap-end-bottom"></div>
+        <div class="edge-gap-end-top"></div>
+    </div>
+{% endmacro -%}
+
+{% macro drawCell(position, item, renderPuzzleElements) -%}
+    <div class="cell" data-row="{{ position[0] }}" data-column="{{ position[1] }}">
+        {% if item.square is not none and renderPuzzleElements %}
+            <div class="square square-{{ item.square.color }}"></div>
+        {% endif %}
+    </div>
+{% endmacro -%}
+
+{% macro dot() -%}
+    <div class="dot"></div>
+{% endmacro -%}
+
+{% macro drawEnd(position, item, renderPuzzleElements, className) -%}
+    <div class="edge end {{ className }}" data-row="{{ position[0] }}" data-column="{{ position[1] }}"></div>
+{% endmacro -%}
+
+{% macro drawEndSpaceHorizontal(position, item, renderPuzzleElements) -%}
+    <div class="end-space-horizontal" data-row="{{ position[0] }}" data-column="{{ position[1] }}"></div>
+{% endmacro -%}
+
+{% macro drawEndSpaceVertical(position, item, renderPuzzleElements) -%}
+    <div class="end-space-vertical" data-row="{{ position[0] }}" data-column="{{ position[1] }}"></div>
+{% endmacro -%}
+
+{% macro drawEndSpaceVerticalCell(position, item, renderPuzzleElements) -%}
+    <div class="end-space-vertical-cell" data-row="{{ position[0] }}" data-column="{{ position[1] }}"></div>
+{% endmacro -%}
+
+{% macro drawStart(isEndOnLeftSide, highlight) -%}
+    <div class="edge start {% if isEndOnLeftSide %}start-shifted{% endif %} {% if highlight %}edge-highlight{% endif %}"></div>
+{% endmacro -%}
+
+{% macro drawLevelSelectCell(position, item, userGameData, isTutorial) -%}
+    <a href="{{ url_for('general.grid_puzzle_level', levelNumber=item.levelNumber) }}"
+       class="cell level-select-cell"
+       data-row="{{ position[0] }}"
+       data-column="{{ position[1] }}"
+       data-level-number="{{ item.levelNumber }}"
+       data-is-tutorial="{{ isTutorial | int }}">
+        {{ item.levelShortDisplayName }}
+    </a>
+{% endmacro -%}

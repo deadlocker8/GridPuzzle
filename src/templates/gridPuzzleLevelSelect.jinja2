@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>GridPuzzle</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/gridPuzzle.css') }}"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+
+        {% import 'gridPuzzleMacros.jinja2' as gridPuzzleMacros %}
+
+        <div id="main-level-select">
+            <div id="header">
+                <div id="headline">Gridpuzzle</div>
+            </div>
+
+            <div id="headline-level-select">Tutorial</div>
+            <div class="grid-container">
+                <div class="grid">
+                    {{ gridPuzzleMacros.drawGrid(levelSelectTutorial, true, userGameData, true) }}
+
+                    {{ gridPuzzleMacros.drawStart(false, false) }}
+                </div>
+            </div>
+
+            <div id="headline-level-select">Levels</div>
+
+            <div class="grid-container" id="container-level-select">
+                <div class="grid">
+                    {{ gridPuzzleMacros.drawGrid(levelSelect, true, userGameData) }}
+
+                    {{ gridPuzzleMacros.drawStart(false, false) }}
+                </div>
+            </div>
+
+            <div id="level-select-spacer">&nbsp;</div>
+
+            <div id="tutorial-notice">- Complete Tutorial first -</div>
+        </div>
+
+        <script>
+            numberOfTutorialLevels = {{ numberOfTutorialLevels }};
+        </script>
+
+        <script defer src="{{ url_for('static', filename='libs/socket.io.min.js') }}" type="text/javascript"></script>
+        <script defer src="{{ url_for('static', filename='js/common.js') }}" type="text/javascript"></script>
+        <script defer src="{{ url_for('static', filename='js/levelSelect.js') }}" type="text/javascript"></script>
+    </body>
+</html>
