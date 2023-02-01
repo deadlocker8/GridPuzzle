@@ -12,6 +12,10 @@ secondary = true
 [tool.poetry.dependencies]
 python = "^3.9"
 thecodelabs-baseutils = "*"
+thecodelabs-flaskutils = "*"
+flask = "2.2.2"
+gevent = "22.10.2"
+
 
 [tool.poetry.dev-dependencies]
 
