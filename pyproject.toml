@@ -7,15 +7,15 @@ authors = ["deadlocker8"]
 [[tool.poetry.source]]
 name = "TheCodeLabs"
 url = "https://pypi.thecodelabs.de"
-secondary = true
+priority = "explicit"
 
 [tool.poetry.dependencies]
-python = "^3.9"
-thecodelabs-baseutils = "*"
-thecodelabs-flaskutils = "*"
+python = "^3.11"
+thecodelabs-baseutils = {version = "*", source = "TheCodeLabs" }
+thecodelabs-flaskutils = {version = "*", source = "TheCodeLabs" }
 flask = "2.3.2"
-Flask-SocketIO = "5.3.4"
-gevent = "22.10.2"
+Flask-SocketIO = "5.3.5"
+gevent = "23.7.0"
 
 [tool.poetry.dev-dependencies]
 
