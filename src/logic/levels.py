@@ -26,8 +26,6 @@ LEVEL_SELECT = [
             (0, 10): Corner.CornerInside(),
             (0, 11): EdgeHorizontal(),
             (0, 12): Corner.CornerInside(),
-            (0, 13): EdgeHorizontal(),
-            (0, 14): Corner.CornerInside(),
             (0, 15): EndRight(),
 
             (1, 0): EdgeVertical(),
@@ -43,8 +41,6 @@ LEVEL_SELECT = [
             (1, 10): EdgeVertical(),
             (1, 11): LevelSelectCell(5, 'T6', 'Tutorial 6'),
             (1, 12): EdgeVertical(),
-            (1, 13): LevelSelectCell(6, 'T7', 'Tutorial 7'),
-            (1, 14): EdgeVertical(),
             (1, 15): EndSpaceHorizontal(),
 
             (2, 0): Corner.CornerInside(),
@@ -60,28 +56,24 @@ LEVEL_SELECT = [
             (2, 10): Corner.CornerInside(),
             (2, 11): EdgeHorizontal(),
             (2, 12): Corner.CornerInside(),
-            (2, 13): EdgeHorizontal(),
-            (2, 14): Corner.CornerInside(),
             (2, 15): EndSpaceHorizontal(),
 
             (3, 0): EdgeVertical(),
-            (3, 1): LevelSelectCell(7, 'T8', 'Tutorial 8'),
+            (3, 1): LevelSelectCell(6, 'T7', 'Tutorial 7'),
             (3, 2): EdgeVertical(),
-            (3, 3): LevelSelectCell(8, 'T9', 'Tutorial 9'),
+            (3, 3): LevelSelectCell(7, 'T8', 'Tutorial 8'),
             (3, 4): EdgeVertical(),
-            (3, 5): LevelSelectCell(9, 'T10', 'Tutorial 10'),
+            (3, 5): LevelSelectCell(8, 'T9', 'Tutorial 9'),
             (3, 6): EdgeVertical(),
-            (3, 7): LevelSelectCell(10, 'T11', 'Tutorial 11'),
+            (3, 7): LevelSelectCell(9, 'T10', 'Tutorial 10'),
             (3, 8): EdgeVertical(),
-            (3, 9): LevelSelectCell(11, 'T12', 'Tutorial 12'),
+            (3, 9): LevelSelectCell(10, 'T11', 'Tutorial 11'),
             (3, 10): EdgeVertical(),
-            (3, 11): LevelSelectCell(12, 'T13', 'Tutorial 13'),
-            (3, 12): EdgeVertical(),
-            (3, 13): LevelSelectCell(13, 'T14', 'Tutorial 14'),
+            (3, 11): LevelSelectCell(11, 'T12', 'Tutorial 12'),
             (3, 14): EdgeVertical(),
             (3, 15): EndSpaceHorizontal(),
 
-            (4, 0): Corner.CornerBottomLeft(),
+            (4, 0): Corner.CornerInside(),
             (4, 1): EdgeHorizontal(),
             (4, 2): Corner.CornerInside(),
             (4, 3): EdgeHorizontal(),
@@ -94,11 +86,39 @@ LEVEL_SELECT = [
             (4, 10): Corner.CornerInside(),
             (4, 11): EdgeHorizontal(),
             (4, 12): Corner.CornerInside(),
-            (4, 13): EdgeHorizontal(),
-            (4, 14): Corner.CornerBottomRight(),
             (4, 15): EndSpaceHorizontal(),
+
+            (5, 0): EdgeVertical(),
+            (5, 1): LevelSelectCell(12, 'T13', 'Tutorial 13'),
+            (5, 2): EdgeVertical(),
+            (5, 3): LevelSelectCell(13, 'T14', 'Tutorial 14'),
+            (5, 4): EdgeVertical(),
+            (5, 5): LevelSelectCell(14, 'T15', 'Tutorial 15'),
+            (5, 6): EdgeVertical(),
+            (5, 7): LevelSelectCell(15, 'T16', 'Tutorial 16'),
+            (5, 8): EdgeVertical(),
+            (5, 9): LevelSelectCell(16, 'T17', 'Tutorial 17'),
+            (5, 10): EdgeVertical(),
+            (5, 11): LevelSelectCell(17, 'T18', 'Tutorial 18'),
+            (5, 14): EdgeVertical(),
+            (5, 15): EndSpaceHorizontal(),
+
+            (6, 0): Corner.CornerBottomLeft(),
+            (6, 1): EdgeHorizontal(),
+            (6, 2): Corner.CornerInside(),
+            (6, 3): EdgeHorizontal(),
+            (6, 4): Corner.CornerInside(),
+            (6, 5): EdgeHorizontal(),
+            (6, 6): Corner.CornerInside(),
+            (6, 7): EdgeHorizontal(),
+            (6, 8): Corner.CornerInside(),
+            (6, 9): EdgeHorizontal(),
+            (6, 10): Corner.CornerInside(),
+            (6, 11): EdgeHorizontal(),
+            (6, 14): Corner.CornerBottomRight(),
+            (6, 15): EndSpaceHorizontal(),
         },
-        'numberOfLevels': 14
+        'numberOfLevels': 18
     },
 
     {
@@ -117,15 +137,15 @@ LEVEL_SELECT = [
             (0, 11): EndRight(),
 
             (1, 0): EdgeVertical(),
-            (1, 1): LevelSelectCell(14, '1', 'Level 1'),
+            (1, 1): LevelSelectCell(18, '1', 'Level 1'),
             (1, 2): EdgeVertical(),
-            (1, 3): LevelSelectCell(15, '2', 'Level 2'),
+            (1, 3): LevelSelectCell(19, '2', 'Level 2'),
             (1, 4): EdgeVertical(),
-            (1, 5): LevelSelectCell(16, '3', 'Level 3'),
+            (1, 5): LevelSelectCell(20, '3', 'Level 3'),
             (1, 6): EdgeVertical(),
-            (1, 7): LevelSelectCell(17, '4', 'Level 4'),
+            (1, 7): LevelSelectCell(21, '4', 'Level 4'),
             (1, 8): EdgeVertical(),
-            (1, 9): LevelSelectCell(18, '5', 'Level 5'),
+            (1, 9): LevelSelectCell(22, '5', 'Level 5'),
             (1, 10): EdgeVertical(),
             (1, 11): EndSpaceHorizontal(),
 
@@ -143,15 +163,15 @@ LEVEL_SELECT = [
             (2, 11): EndSpaceHorizontal(),
 
             (3, 0): EdgeVertical(),
-            (3, 1): LevelSelectCell(19, '6', 'Level 6'),
+            (3, 1): LevelSelectCell(23, '6', 'Level 6'),
             (3, 2): EdgeVertical(),
-            (3, 3): LevelSelectCell(20, '7', 'Level 7'),
+            (3, 3): LevelSelectCell(24, '7', 'Level 7'),
             (3, 4): EdgeVertical(),
-            (3, 5): LevelSelectCell(21, '8', 'Level 8'),
+            (3, 5): LevelSelectCell(25, '8', 'Level 8'),
             (3, 6): EdgeVertical(),
-            (3, 7): LevelSelectCell(22, '9', 'Level 9'),
+            (3, 7): LevelSelectCell(26, '9', 'Level 9'),
             (3, 8): EdgeVertical(),
-            (3, 9): LevelSelectCell(23, '10', 'Level 10'),
+            (3, 9): LevelSelectCell(27, '10', 'Level 10'),
             (3, 10): EdgeVertical(),
             (3, 11): EndSpaceHorizontal(),
 
@@ -169,15 +189,15 @@ LEVEL_SELECT = [
             (4, 11): EndSpaceHorizontal(),
 
             (5, 0): EdgeVertical(),
-            (5, 1): LevelSelectCell(24, '11', 'Level 11'),
+            (5, 1): LevelSelectCell(28, '11', 'Level 11'),
             (5, 2): EdgeVertical(),
-            (5, 3): LevelSelectCell(25, '12', 'Level 12'),
+            (5, 3): LevelSelectCell(29, '12', 'Level 12'),
             (5, 4): EdgeVertical(),
-            (5, 5): LevelSelectCell(26, '13', 'Level 13'),
+            (5, 5): LevelSelectCell(30, '13', 'Level 13'),
             (5, 6): EdgeVertical(),
-            (5, 7): LevelSelectCell(27, '14', 'Level 14'),
+            (5, 7): LevelSelectCell(31, '14', 'Level 14'),
             (5, 8): EdgeVertical(),
-            (5, 9): LevelSelectCell(28, '15', 'Level 15'),
+            (5, 9): LevelSelectCell(32, '15', 'Level 15'),
             (5, 10): EdgeVertical(),
             (5, 11): EndSpaceHorizontal(),
 
@@ -195,15 +215,15 @@ LEVEL_SELECT = [
             (6, 11): EndSpaceHorizontal(),
 
             (7, 0): EdgeVertical(),
-            (7, 1): LevelSelectCell(29, '16', 'Level 16'),
+            (7, 1): LevelSelectCell(33, '16', 'Level 16'),
             (7, 2): EdgeVertical(),
-            (7, 3): LevelSelectCell(30, '17', 'Level 17'),
+            (7, 3): LevelSelectCell(34, '17', 'Level 17'),
             (7, 4): EdgeVertical(),
-            (7, 5): LevelSelectCell(31, '18', 'Level 18'),
+            (7, 5): LevelSelectCell(35, '18', 'Level 18'),
             (7, 6): EdgeVertical(),
-            (7, 7): LevelSelectCell(32, '19', 'Level 19'),
+            (7, 7): LevelSelectCell(36, '19', 'Level 19'),
             (7, 8): EdgeVertical(),
-            (7, 9): LevelSelectCell(33, '20', 'Level 20'),
+            (7, 9): LevelSelectCell(37, '20', 'Level 20'),
             (7, 10): EdgeVertical(),
             (7, 11): EndSpaceHorizontal(),
 
@@ -221,15 +241,15 @@ LEVEL_SELECT = [
             (8, 11): EndSpaceHorizontal(),
 
             (9, 0): EdgeVertical(),
-            (9, 1): LevelSelectCell(34, '21', 'Level 21'),
+            (9, 1): LevelSelectCell(38, '21', 'Level 21'),
             (9, 2): EdgeVertical(),
-            (9, 3): LevelSelectCell(35, '22', 'Level 22'),
+            (9, 3): LevelSelectCell(39, '22', 'Level 22'),
             (9, 4): EdgeVertical(),
-            (9, 5): LevelSelectCell(36, '23', 'Level 23'),
+            (9, 5): LevelSelectCell(40, '23', 'Level 23'),
             (9, 6): EdgeVertical(),
-            (9, 7): LevelSelectCell(37, '24', 'Level 24'),
+            (9, 7): LevelSelectCell(41, '24', 'Level 24'),
             (9, 8): EdgeVertical(),
-            (9, 9): LevelSelectCell(38, '25', 'Level 25'),
+            (9, 9): LevelSelectCell(42, '25', 'Level 25'),
             (9, 10): EdgeVertical(),
             (9, 11): EndSpaceHorizontal(),
 
@@ -253,7 +273,7 @@ LEVEL_SELECT = [
 LEVELS = [
     ############# TUTORIAL #############
 
-    # simple keyhole
+     # simple keyhole
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -692,7 +712,7 @@ LEVELS = [
         'endPosition': [0, 7],
         'hint': 'All white dots must be connected by the line.'
     },
-    # 2x2 grid with colored squares
+    # 2x1 grid with colored squares
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -1048,6 +1068,178 @@ LEVELS = [
         },
         'endPosition': [0, 2],
         'hint': 'Separate the colors. Squares don\'t have<br>to be paired with all the squares of their same color.'
+    },
+    # 2x1 grid with triangles
+    {
+        'data': {
+            (0, 0): Corner.CornerTopLeft(),
+            (0, 1): EdgeHorizontal(),
+            (0, 2): Corner.CornerInside(),
+            (0, 3): EndRight(),
+
+            (1, 0): EdgeVertical(),
+            (1, 1): Cell(),
+            (1, 2): EdgeVertical(),
+            (1, 3): EndSpaceHorizontal(),
+
+            (2, 0): Corner.CornerInside(),
+            (2, 1): EdgeHorizontal(),
+            (2, 2): Corner.CornerInside(),
+            (2, 3): EndSpaceHorizontal(),
+
+            (3, 0): EdgeVertical(),
+            (3, 1): Cell(numberOfTriangles=1),
+            (3, 2): EdgeVertical(),
+            (3, 3): EndSpaceHorizontal(),
+
+            (4, 0): Corner.CornerInside(),
+            (4, 1): EdgeHorizontal(),
+            (4, 2): Corner.CornerBottomRight(),
+            (4, 3): EndSpaceHorizontal(),
+        },
+        'endPosition': [0, 3],
+        'hint': 'The number of triangles in a cell is related to how many times a line is allowed to touch the cell.'
+    },
+    # 2x1 grid with triangles
+    {
+        'data': {
+            (0, 0): Corner.CornerTopLeft(),
+            (0, 1): EdgeHorizontal(),
+            (0, 2): Corner.CornerInside(),
+            (0, 3): EndRight(),
+
+            (1, 0): EdgeVertical(),
+            (1, 1): Cell(),
+            (1, 2): EdgeVertical(),
+            (1, 3): EndSpaceHorizontal(),
+
+            (2, 0): Corner.CornerInside(),
+            (2, 1): EdgeHorizontal(),
+            (2, 2): Corner.CornerInside(),
+            (2, 3): EndSpaceHorizontal(),
+
+            (3, 0): EdgeVertical(),
+            (3, 1): Cell(numberOfTriangles=2),
+            (3, 2): EdgeVertical(),
+            (3, 3): EndSpaceHorizontal(),
+
+            (4, 0): Corner.CornerInside(),
+            (4, 1): EdgeHorizontal(),
+            (4, 2): Corner.CornerBottomRight(),
+            (4, 3): EndSpaceHorizontal(),
+        },
+        'endPosition': [0, 3],
+        'hint': 'The number of triangles in a cell is related to how many times a line is allowed to touch the cell.'
+    },
+    # 2x2 grid with triangles
+    {
+        'data': {
+            (0, 0): Corner.CornerTopLeft(),
+            (0, 1): EdgeHorizontal(),
+            (0, 2): Corner.CornerInside(),
+            (0, 3): EdgeHorizontal(),
+            (0, 4): Corner.CornerInside(),
+            (0, 5): EndRight(),
+
+            (1, 0): EdgeVertical(),
+            (1, 1): Cell(),
+            (1, 2): EdgeVertical(),
+            (1, 3): Cell(numberOfTriangles=1),
+            (1, 4): EdgeVertical(),
+            (1, 5): EndSpaceHorizontal(),
+
+            (2, 0): Corner.CornerInside(),
+            (2, 1): EdgeHorizontal(),
+            (2, 2): Corner.CornerInside(),
+            (2, 3): EdgeHorizontal(),
+            (2, 4): Corner.CornerInside(),
+            (2, 5): EndSpaceHorizontal(),
+
+            (3, 0): EdgeVertical(),
+            (3, 1): Cell(numberOfTriangles=3),
+            (3, 2): EdgeVertical(),
+            (3, 3): Cell(),
+            (3, 4): EdgeVertical(),
+            (3, 5): EndSpaceHorizontal(),
+
+            (4, 0): Corner.CornerInside(),
+            (4, 1): EdgeHorizontal(),
+            (4, 2): Corner.CornerInside(),
+            (4, 3): EdgeHorizontal(),
+            (4, 4): Corner.CornerBottomRight(),
+            (4, 5): EndSpaceHorizontal(),
+        },
+        'endPosition': [0, 5],
+        'hint': 'The number of triangles in a cell is related to how many times a line is allowed to touch the cell.'
+    },
+    # 3x3 grid with triangles
+    {
+        'data': {
+            (0, 0): EndSpaceHorizontal(),
+            (0, 1): Corner.CornerTopLeft(),
+            (0, 2): EdgeHorizontal(),
+            (0, 3): Corner.CornerInside(),
+            (0, 4): EdgeHorizontal(),
+            (0, 5): Corner.CornerInside(),
+            (0, 6): EdgeHorizontal(),
+            (0, 7): Corner.CornerTopRight(),
+
+            (1, 0): EndSpaceHorizontal(),
+            (1, 1): EdgeVertical(),
+            (1, 2): Cell(numberOfTriangles=2),
+            (1, 3): EdgeVertical(),
+            (1, 4): Cell(),
+            (1, 5): EdgeVertical(),
+            (1, 6): Cell(),
+            (1, 7): EdgeVertical(),
+
+            (2, 0): EndSpaceHorizontal(),
+            (2, 1): Corner.CornerInside(),
+            (2, 2): EdgeHorizontal(),
+            (2, 3): Corner.CornerInside(),
+            (2, 4): EdgeHorizontal(),
+            (2, 5): Corner.CornerInside(),
+            (2, 6): EdgeHorizontal(),
+            (2, 7): Corner.CornerInside(),
+
+            (3, 0): EndSpaceHorizontal(),
+            (3, 1): EdgeVertical(),
+            (3, 2): Cell(),
+            (3, 3): EdgeVertical(),
+            (3, 4): Cell(),
+            (3, 5): EdgeVertical(),
+            (3, 6): Cell(numberOfTriangles=3),
+            (3, 7): EdgeVertical(),
+
+            (4, 0): EndLeft(),
+            (4, 1): Corner.CornerInside(),
+            (4, 2): EdgeHorizontal(),
+            (4, 3): Corner.CornerInside(),
+            (4, 4): EdgeHorizontal(),
+            (4, 5): Corner.CornerInside(),
+            (4, 6): EdgeHorizontal(),
+            (4, 7): Corner.CornerInside(),
+
+            (5, 0): EndSpaceHorizontal(),
+            (5, 1): EdgeVertical(),
+            (5, 2): Cell(),
+            (5, 3): EdgeVertical(),
+            (5, 4): Cell(),
+            (5, 5): EdgeVertical(),
+            (5, 6): Cell(),
+            (5, 7): EdgeVertical(),
+
+            (6, 0): EndSpaceHorizontal(),
+            (6, 1): Corner.CornerInside(),
+            (6, 2): EdgeHorizontal(),
+            (6, 3): Corner.CornerInside(),
+            (6, 4): EdgeHorizontal(),
+            (6, 5): Corner.CornerInside(),
+            (6, 6): EdgeHorizontal(),
+            (6, 7): Corner.CornerBottomRight(),
+        },
+        'endPosition': [4, 0],
+        'hint': 'The number of triangles in a cell is related to how many times a line is allowed to touch the cell.'
     },
 
     ############# LEVELS #############
