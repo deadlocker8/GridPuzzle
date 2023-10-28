@@ -86,8 +86,14 @@
 
 {% macro drawCell(position, item, renderPuzzleElements) -%}
     <div class="cell" data-row="{{ position[0] }}" data-column="{{ position[1] }}">
-        {% if item.square is not none and renderPuzzleElements %}
-            <div class="square square-{{ item.square.color }}"></div>
+        {% if renderPuzzleElements %}
+            {% if item.square is not none %}
+                <div class="square square-{{ item.square.color }}"></div>
+            {% endif %}
+
+            {% for __ in range(item.numberOfTriangles) %}
+                <div class="triangle"></div>
+            {% endfor %}
         {% endif %}
     </div>
 {% endmacro -%}

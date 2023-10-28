@@ -73,6 +73,7 @@ class Square:
 @dataclass()
 class Cell:
     square: Square = None
+    numberOfTriangles: int = 0
     isUsed: bool = False
 
 

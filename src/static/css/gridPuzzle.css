@@ -316,6 +316,28 @@ a, a:active, a:visited {
     background-color: var(--color-edge-highlight);
 }
 
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 1.3vmin solid transparent;
+    border-right: 1.3vmin solid transparent;
+    border-bottom: 2vmin solid var(--color-square-orange);
+}
+
+.triangle:not(:last-child) {
+    margin-right: 0.5vmin;
+}
+
+.show-error-triangle {
+    animation: triangle-blinker 0.5s step-start 5;
+}
+
+@keyframes triangle-blinker {
+    50% {
+        border-bottom: 2vmin solid var(--color-wrong-solution);
+    }
+}
+
 .show-error {
     animation: blinker 0.5s step-start 5;
 }

@@ -51,6 +51,7 @@ def __CheckValidSolution(level, userGameData) -> Dict:
     errorGapPositions = []
     errorCornerUsedEdgePositions = []
     errorMandatoryPositions = []
+    errorTrianglePositions = []
 
     for position, element in levelData.items():
         # check if gaps are illegally used
@@ -58,7 +59,7 @@ def __CheckValidSolution(level, userGameData) -> Dict:
             if element.isUsed:
                 errorGapPositions.append(position)
 
-        # check if corners exist with mote than two used edges
+        # check if corners exist with more than two used edges
         if isinstance(element, Corner):
             if __CheckCornerUsedEdgeCount(levelData, position):
                 errorCornerUsedEdgePositions.append(position)
@@ -68,13 +69,18 @@ def __CheckValidSolution(level, userGameData) -> Dict:
             if element.isMandatory and not element.isUsed:
                 errorMandatoryPositions.append(position)
 
+        # check triangles (cell is touched by numberOfTriangles lines)
+        if isinstance(element, Cell):
+            if __CheckTriangles(levelData, position):
+                errorTrianglePositions.append(position)
+
     # check all colors are separated
     errorColorPositions = __CheckColorsSeparated(levelData)
 
     # check end position is reached
     isEndPositionUsed = levelData[tuple(endPosition)].isUsed
 
-    isCorrect = isEndPositionUsed and not errorGapPositions and not errorCornerUsedEdgePositions and not errorMandatoryPositions and not errorColorPositions
+    isCorrect = isEndPositionUsed and not errorGapPositions and not errorCornerUsedEdgePositions and not errorMandatoryPositions and not errorColorPositions and not errorTrianglePositions
 
     return {
         'isCorrect': isCorrect,
@@ -82,6 +88,7 @@ def __CheckValidSolution(level, userGameData) -> Dict:
         'errorCornerUsedEdgePositions': errorCornerUsedEdgePositions,
         'errorMandatoryPositions': errorMandatoryPositions,
         'errorColorPositions': errorColorPositions,
+        'errorTrianglePositions': errorTrianglePositions,
         'userGameData': userGameData
     }
 
@@ -158,13 +165,26 @@ def __IsValidNeighbourAndNotUsed(levelData: Dict, edgePosition: Tuple[int, int],
     return not levelData[edgePosition].isUsed
 
 
+def __CheckTriangles(levelData: Dict, cellPosition: Tuple[int, int]) -> bool:
+    cell = levelData[cellPosition]
+
+    if cell.numberOfTriangles == 0:
+        return False
+
+    return __GetNumberOfUsedEdges(levelData, cellPosition) != cell.numberOfTriangles
+
+
 def __CheckCornerUsedEdgeCount(levelData: Dict, cellPosition: Tuple[int, int]) -> bool:
+    return __GetNumberOfUsedEdges(levelData, cellPosition) > 2
+
+
+def __GetNumberOfUsedEdges(levelData: Dict, cellPosition: Tuple[int, int]) -> int:
     topEdgePosition = (cellPosition[0] - 1, cellPosition[1])
     rightEdgePosition = (cellPosition[0], cellPosition[1] + 1)
     bottomEdgePosition = (cellPosition[0] + 1, cellPosition[1])
     leftEdgePosition = (cellPosition[0], cellPosition[1] - 1)
-
     numberOfUsedEdges = 0
+
     edgePositions = [topEdgePosition, rightEdgePosition, bottomEdgePosition, leftEdgePosition]
     for position in edgePositions:
         if position not in levelData:
@@ -173,7 +193,7 @@ def __CheckCornerUsedEdgeCount(levelData: Dict, cellPosition: Tuple[int, int]) -
         if levelData[position].isUsed:
             numberOfUsedEdges += 1
 
-    return numberOfUsedEdges > 2
+    return numberOfUsedEdges
 
 
 def __CreateEmptyUserGameData(numberOfTutorialLevels: int, numberOfLevels: int) -> List:
