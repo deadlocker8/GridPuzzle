@@ -7,6 +7,7 @@ Grid puzzle game inspired by The Witness.
 ## Supported puzzle elements
 - Dots
 - Colored squares
+- Triangles
 
 ## Run GridPuzzle
 
