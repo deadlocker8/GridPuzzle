@@ -253,7 +253,7 @@ LEVEL_SELECT = [
             (9, 10): EdgeVertical(),
             (9, 11): EndSpaceHorizontal(),
 
-            (10, 0): Corner.CornerBottomLeft(),
+            (10, 0): Corner.CornerInside(),
             (10, 1): EdgeHorizontal(),
             (10, 2): Corner.CornerInside(),
             (10, 3): EdgeHorizontal(),
@@ -263,10 +263,36 @@ LEVEL_SELECT = [
             (10, 7): EdgeHorizontal(),
             (10, 8): Corner.CornerInside(),
             (10, 9): EdgeHorizontal(),
-            (10, 10): Corner.CornerBottomRight(),
+            (10, 10): Corner.CornerInside(),
             (10, 11): EndSpaceHorizontal(),
+
+            (11, 0): EdgeVertical(),
+            (11, 1): LevelSelectCell(43, '26', 'Level 26'),
+            (11, 2): EdgeVertical(),
+            (11, 3): LevelSelectCell(44, '27', 'Level 27'),
+            (11, 4): EdgeVertical(),
+            (11, 5): LevelSelectCell(45, '28', 'Level 28'),
+            (11, 6): EdgeVertical(),
+            (11, 7): LevelSelectCell(46, '29', 'Level 29'),
+            (11, 8): EdgeVertical(),
+            (11, 9): LevelSelectCell(47, '30', 'Level 30'),
+            (11, 10): EdgeVertical(),
+            (11, 11): EndSpaceHorizontal(),
+
+            (12, 0): Corner.CornerBottomLeft(),
+            (12, 1): EdgeHorizontal(),
+            (12, 2): Corner.CornerInside(),
+            (12, 3): EdgeHorizontal(),
+            (12, 4): Corner.CornerInside(),
+            (12, 5): EdgeHorizontal(),
+            (12, 6): Corner.CornerInside(),
+            (12, 7): EdgeHorizontal(),
+            (12, 8): Corner.CornerInside(),
+            (12, 9): EdgeHorizontal(),
+            (12, 10): Corner.CornerBottomRight(),
+            (12, 11): EndSpaceHorizontal(),
         },
-        'numberOfLevels': 25
+        'numberOfLevels': 30
     }
 ]
 
@@ -1852,6 +1878,74 @@ LEVELS = [
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
+            (0, 1): EdgeHorizontal(),
+            (0, 2): Corner.CornerInside(),
+            (0, 3): EdgeHorizontal(),
+            (0, 4): Corner.CornerInside(),
+            (0, 5): EdgeHorizontal(),
+            (0, 6): Corner.CornerInside(),
+            (0, 7): EndRight(),
+
+            (1, 0): EdgeVertical(),
+            (1, 1): Cell(numberOfTriangles=2),
+            (1, 2): EdgeVertical(),
+            (1, 3): Cell(),
+            (1, 4): EdgeVertical(),
+            (1, 5): Cell(numberOfTriangles=2),
+            (1, 6): EdgeVertical(),
+            (1, 7): EndSpaceHorizontal(),
+
+            (2, 0): Corner.CornerInside(),
+            (2, 1): EdgeHorizontal(),
+            (2, 2): Corner.CornerInside(),
+            (2, 3): EdgeHorizontal(),
+            (2, 4): Corner.CornerInside(),
+            (2, 5): EdgeGapHorizontal(),
+            (2, 6): Corner.CornerInside(),
+            (2, 7): EndSpaceHorizontal(),
+
+            (3, 0): EdgeVertical(),
+            (3, 1): Cell(),
+            (3, 2): EdgeVertical(),
+            (3, 3): Cell(numberOfTriangles=2),
+            (3, 4): EdgeVertical(),
+            (3, 5): Cell(),
+            (3, 6): EdgeVertical(),
+            (3, 7): EndSpaceHorizontal(),
+
+            (4, 0): Corner.CornerInside(),
+            (4, 1): EdgeHorizontal(),
+            (4, 2): Corner.CornerInside(),
+            (4, 3): EdgeHorizontal(),
+            (4, 4): Corner.CornerInside(),
+            (4, 5): EdgeHorizontal(),
+            (4, 6): Corner.CornerInside(),
+            (4, 7): EndSpaceHorizontal(),
+
+            (5, 0): EdgeVertical(),
+            (5, 1): Cell(numberOfTriangles=2),
+            (5, 2): EdgeVertical(),
+            (5, 3): Cell(),
+            (5, 4): EdgeVertical(),
+            (5, 5): Cell(numberOfTriangles=2),
+            (5, 6): EdgeVertical(),
+            (5, 7): EndSpaceHorizontal(),
+
+            (6, 0): Corner.CornerBottomLeft(),
+            (6, 1): EdgeHorizontal(),
+            (6, 2): Corner.CornerInside(),
+            (6, 3): EdgeHorizontal(),
+            (6, 4): Corner.CornerInside(),
+            (6, 5): EdgeHorizontal(),
+            (6, 6): Corner.CornerBottomRight(),
+            (6, 7): EndSpaceHorizontal(),
+        },
+        'endPosition': [0, 7]
+    },
+    # Level 9
+    {
+        'data': {
+            (0, 0): Corner.CornerTopLeft(),
             (0, 1): EdgeHorizontal(isMandatory=True),
             (0, 2): Corner.CornerInside(),
             (0, 3): EdgeHorizontal(),
@@ -1952,7 +2046,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 9
+    # Level 10
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -2056,7 +2150,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 10
+    # Level 11
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(isMandatory=True),
@@ -2160,7 +2254,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 11
+    # Level 12
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -2264,7 +2358,111 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 12
+    # Level 13
+    {
+        'data': {
+            (0, 0): Corner.CornerTopLeft(),
+            (0, 1): EdgeHorizontal(),
+            (0, 2): Corner.CornerInside(),
+            (0, 3): EdgeHorizontal(),
+            (0, 4): Corner.CornerInside(),
+            (0, 5): EdgeHorizontal(),
+            (0, 6): Corner.CornerInside(),
+            (0, 7): EdgeHorizontal(),
+            (0, 8): Corner.CornerInside(),
+            (0, 9): EndRight(),
+
+            (1, 0): EdgeVertical(),
+            (1, 1): Cell(),
+            (1, 2): EdgeVertical(),
+            (1, 3): Cell(numberOfTriangles=1),
+            (1, 4): EdgeVertical(),
+            (1, 5): Cell(Square('black')),
+            (1, 6): EdgeVertical(),
+            (1, 7): Cell(),
+            (1, 8): EdgeVertical(),
+            (1, 9): EndSpaceHorizontal(),
+
+            (2, 0): Corner.CornerInside(),
+            (2, 1): EdgeHorizontal(),
+            (2, 2): Corner.CornerInside(),
+            (2, 3): EdgeHorizontal(),
+            (2, 4): Corner.CornerInside(),
+            (2, 5): EdgeHorizontal(),
+            (2, 6): Corner.CornerInside(),
+            (2, 7): EdgeHorizontal(),
+            (2, 8): Corner.CornerInside(),
+            (2, 9): EndSpaceHorizontal(),
+
+            (3, 0): EdgeVertical(),
+            (3, 1): Cell(),
+            (3, 2): EdgeVertical(),
+            (3, 3): Cell(numberOfTriangles=1),
+            (3, 4): EdgeGapVertical(),
+            (3, 5): Cell(Square('white')),
+            (3, 6): EdgeVertical(),
+            (3, 7): Cell(),
+            (3, 8): EdgeVertical(),
+            (3, 9): EndSpaceHorizontal(),
+
+            (4, 0): Corner.CornerInside(),
+            (4, 1): EdgeHorizontal(),
+            (4, 2): Corner.CornerInside(),
+            (4, 3): EdgeHorizontal(),
+            (4, 4): Corner.CornerInside(),
+            (4, 5): EdgeHorizontal(),
+            (4, 6): Corner.CornerInside(),
+            (4, 7): EdgeHorizontal(),
+            (4, 8): Corner.CornerInside(),
+            (4, 9): EndSpaceHorizontal(),
+
+            (5, 0): EdgeVertical(),
+            (5, 1): Cell(),
+            (5, 2): EdgeVertical(),
+            (5, 3): Cell(numberOfTriangles=1),
+            (5, 4): EdgeGapVertical(),
+            (5, 5): Cell(Square('black')),
+            (5, 6): EdgeVertical(),
+            (5, 7): Cell(),
+            (5, 8): EdgeVertical(),
+            (5, 9): EndSpaceHorizontal(),
+
+            (6, 0): Corner.CornerInside(),
+            (6, 1): EdgeHorizontal(),
+            (6, 2): Corner.CornerInside(),
+            (6, 3): EdgeHorizontal(),
+            (6, 4): Corner.CornerInside(),
+            (6, 5): EdgeHorizontal(),
+            (6, 6): Corner.CornerInside(),
+            (6, 7): EdgeHorizontal(),
+            (6, 8): Corner.CornerInside(),
+            (6, 9): EndSpaceHorizontal(),
+
+            (7, 0): EdgeVertical(),
+            (7, 1): Cell(),
+            (7, 2): EdgeVertical(),
+            (7, 3): Cell(numberOfTriangles=1),
+            (7, 4): EdgeVertical(),
+            (7, 5): Cell(Square('white')),
+            (7, 6): EdgeVertical(),
+            (7, 7): Cell(),
+            (7, 8): EdgeVertical(),
+            (7, 9): EndSpaceHorizontal(),
+
+            (8, 0): Corner.CornerBottomLeft(),
+            (8, 1): EdgeHorizontal(),
+            (8, 2): Corner.CornerInside(),
+            (8, 3): EdgeHorizontal(),
+            (8, 4): Corner.CornerInside(),
+            (8, 5): EdgeHorizontal(),
+            (8, 6): Corner.CornerInside(),
+            (8, 7): EdgeHorizontal(),
+            (8, 8): Corner.CornerBottomRight(),
+            (8, 9): EndSpaceHorizontal(),
+        },
+        'endPosition': [0, 9]
+    },
+    # Level 14
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -2368,7 +2566,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 13
+    # Level 15
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(isMandatory=True),
@@ -2472,7 +2670,111 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 14
+    # Level 16
+    {
+        'data': {
+            (0, 0): Corner.CornerTopLeft(),
+            (0, 1): EdgeHorizontal(),
+            (0, 2): Corner.CornerInside(),
+            (0, 3): EdgeHorizontal(),
+            (0, 4): Corner.CornerInside(),
+            (0, 5): EdgeHorizontal(),
+            (0, 6): Corner.CornerInside(),
+            (0, 7): EdgeHorizontal(),
+            (0, 8): Corner.CornerInside(),
+            (0, 9): EndRight(),
+
+            (1, 0): EdgeVertical(),
+            (1, 1): Cell(numberOfTriangles=3),
+            (1, 2): EdgeVertical(),
+            (1, 3): Cell(),
+            (1, 4): EdgeVertical(),
+            (1, 5): Cell(numberOfTriangles=1),
+            (1, 6): EdgeVertical(),
+            (1, 7): Cell(),
+            (1, 8): EdgeVertical(),
+            (1, 9): EndSpaceHorizontal(),
+
+            (2, 0): Corner.CornerInside(),
+            (2, 1): EdgeHorizontal(),
+            (2, 2): Corner.CornerInside(),
+            (2, 3): EdgeHorizontal(),
+            (2, 4): Corner.CornerInside(),
+            (2, 5): EdgeHorizontal(),
+            (2, 6): Corner.CornerInside(),
+            (2, 7): EdgeHorizontal(),
+            (2, 8): Corner.CornerInside(),
+            (2, 9): EndSpaceHorizontal(),
+
+            (3, 0): EdgeVertical(),
+            (3, 1): Cell(numberOfTriangles=1),
+            (3, 2): EdgeVertical(),
+            (3, 3): Cell(),
+            (3, 4): EdgeVertical(),
+            (3, 5): Cell(),
+            (3, 6): EdgeVertical(),
+            (3, 7): Cell(),
+            (3, 8): EdgeVertical(),
+            (3, 9): EndSpaceHorizontal(),
+
+            (4, 0): Corner.CornerInside(),
+            (4, 1): EdgeHorizontal(),
+            (4, 2): Corner.CornerInside(),
+            (4, 3): EdgeHorizontal(),
+            (4, 4): Corner.CornerInside(),
+            (4, 5): EdgeHorizontal(),
+            (4, 6): Corner.CornerInside(),
+            (4, 7): EdgeHorizontal(),
+            (4, 8): Corner.CornerInside(),
+            (4, 9): EndSpaceHorizontal(),
+
+            (5, 0): EdgeVertical(),
+            (5, 1): Cell(numberOfTriangles=1),
+            (5, 2): EdgeVertical(),
+            (5, 3): Cell(numberOfTriangles=3),
+            (5, 4): EdgeVertical(),
+            (5, 5): Cell(numberOfTriangles=1),
+            (5, 6): EdgeVertical(),
+            (5, 7): Cell(),
+            (5, 8): EdgeVertical(),
+            (5, 9): EndSpaceHorizontal(),
+
+            (6, 0): Corner.CornerInside(),
+            (6, 1): EdgeHorizontal(),
+            (6, 2): Corner.CornerInside(),
+            (6, 3): EdgeHorizontal(),
+            (6, 4): Corner.CornerInside(),
+            (6, 5): EdgeHorizontal(),
+            (6, 6): Corner.CornerInside(),
+            (6, 7): EdgeHorizontal(),
+            (6, 8): Corner.CornerInside(),
+            (6, 9): EndSpaceHorizontal(),
+
+            (7, 0): EdgeVertical(),
+            (7, 1): Cell(),
+            (7, 2): EdgeVertical(),
+            (7, 3): Cell(numberOfTriangles=2),
+            (7, 4): EdgeVertical(),
+            (7, 5): Cell(numberOfTriangles=2),
+            (7, 6): EdgeVertical(),
+            (7, 7): Cell(),
+            (7, 8): EdgeVertical(),
+            (7, 9): EndSpaceHorizontal(),
+
+            (8, 0): Corner.CornerBottomLeft(),
+            (8, 1): EdgeHorizontal(),
+            (8, 2): Corner.CornerInside(),
+            (8, 3): EdgeHorizontal(),
+            (8, 4): Corner.CornerInside(),
+            (8, 5): EdgeHorizontal(),
+            (8, 6): Corner.CornerInside(),
+            (8, 7): EdgeHorizontal(),
+            (8, 8): Corner.CornerBottomRight(),
+            (8, 9): EndSpaceHorizontal(),
+        },
+        'endPosition': [0, 9]
+    },
+    # Level 17
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -2576,7 +2878,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 15
+    # Level 18
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -2680,7 +2982,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 16
+    # Level 19
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -2776,7 +3078,7 @@ LEVELS = [
         },
         'endPosition': [0, 11]
     },
-    # Level 17
+    # Level 20
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -2880,7 +3182,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 18
+    # Level 21
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -2984,7 +3286,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 19
+    # Level 22
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -3088,7 +3390,111 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 20
+    # Level 23
+    {
+        'data': {
+            (0, 0): Corner.CornerTopLeft(),
+            (0, 1): EdgeHorizontal(),
+            (0, 2): Corner.CornerInside(),
+            (0, 3): EdgeHorizontal(),
+            (0, 4): Corner.CornerInside(),
+            (0, 5): EdgeHorizontal(),
+            (0, 6): Corner.CornerInside(),
+            (0, 7): EdgeHorizontal(),
+            (0, 8): Corner.CornerInside(),
+            (0, 9): EndRight(),
+
+            (1, 0): EdgeVertical(),
+            (1, 1): Cell(),
+            (1, 2): EdgeVertical(),
+            (1, 3): Cell(Square('orange')),
+            (1, 4): EdgeVertical(),
+            (1, 5): Cell(Square('purple')),
+            (1, 6): EdgeVertical(),
+            (1, 7): Cell(),
+            (1, 8): EdgeVertical(),
+            (1, 9): EndSpaceHorizontal(),
+
+            (2, 0): Corner.CornerInside(),
+            (2, 1): EdgeHorizontal(),
+            (2, 2): Corner.CornerInside(),
+            (2, 3): EdgeHorizontal(),
+            (2, 4): Corner.CornerInside(),
+            (2, 5): EdgeHorizontal(),
+            (2, 6): Corner.CornerInside(),
+            (2, 7): EdgeHorizontal(),
+            (2, 8): Corner.CornerInside(),
+            (2, 9): EndSpaceHorizontal(),
+
+            (3, 0): EdgeVertical(),
+            (3, 1): Cell(Square('purple')),
+            (3, 2): EdgeVertical(),
+            (3, 3): Cell(),
+            (3, 4): EdgeVertical(),
+            (3, 5): Cell(),
+            (3, 6): EdgeVertical(isMandatory=True),
+            (3, 7): Cell(Square('orange')),
+            (3, 8): EdgeVertical(),
+            (3, 9): EndSpaceHorizontal(),
+
+            (4, 0): Corner.CornerInside(),
+            (4, 1): EdgeHorizontal(isMandatory=True),
+            (4, 2): Corner.CornerInside(),
+            (4, 3): EdgeHorizontal(),
+            (4, 4): Corner.CornerInside(),
+            (4, 5): EdgeHorizontal(),
+            (4, 6): Corner.CornerInside(),
+            (4, 7): EdgeHorizontal(),
+            (4, 8): Corner.CornerInside(),
+            (4, 9): EndSpaceHorizontal(),
+
+            (5, 0): EdgeVertical(),
+            (5, 1): Cell(numberOfTriangles=2),
+            (5, 2): EdgeVertical(),
+            (5, 3): Cell(Square('purple')),
+            (5, 4): EdgeVertical(),
+            (5, 5): Cell(),
+            (5, 6): EdgeVertical(),
+            (5, 7): Cell(),
+            (5, 8): EdgeVertical(),
+            (5, 9): EndSpaceHorizontal(),
+
+            (6, 0): Corner.CornerInside(),
+            (6, 1): EdgeHorizontal(),
+            (6, 2): Corner.CornerInside(),
+            (6, 3): EdgeHorizontal(),
+            (6, 4): Corner.CornerInside(),
+            (6, 5): EdgeHorizontal(),
+            (6, 6): Corner.CornerInside(),
+            (6, 7): EdgeHorizontal(isMandatory=True),
+            (6, 8): Corner.CornerInside(),
+            (6, 9): EndSpaceHorizontal(),
+
+            (7, 0): EdgeVertical(),
+            (7, 1): Cell(),
+            (7, 2): EdgeVertical(),
+            (7, 3): Cell(Square('orange')),
+            (7, 4): EdgeVertical(),
+            (7, 5): Cell(Square('orange')),
+            (7, 6): EdgeVertical(),
+            (7, 7): Cell(),
+            (7, 8): EdgeVertical(),
+            (7, 9): EndSpaceHorizontal(),
+
+            (8, 0): Corner.CornerBottomLeft(),
+            (8, 1): EdgeHorizontal(),
+            (8, 2): Corner.CornerInside(),
+            (8, 3): EdgeHorizontal(),
+            (8, 4): Corner.CornerInside(),
+            (8, 5): EdgeHorizontal(),
+            (8, 6): Corner.CornerInside(),
+            (8, 7): EdgeHorizontal(),
+            (8, 8): Corner.CornerBottomRight(),
+            (8, 9): EndSpaceHorizontal(),
+        },
+        'endPosition': [0, 9]
+    },
+    # Level 24
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -3210,7 +3616,132 @@ LEVELS = [
         },
         'endPosition': [0, 11]
     },
-    # Level 21
+    # Level 25
+    {
+        'data': {
+            (0, 0): EndSpaceVertical(),
+            (0, 1): EndSpaceVerticalCell(),
+            (0, 2): EndTop(),
+            (0, 3): EndSpaceVerticalCell(),
+            (0, 4): EndSpaceVertical(),
+            (0, 5): EndSpaceVerticalCell(),
+            (0, 6): EndSpaceVertical(),
+            (0, 7): EndSpaceVerticalCell(),
+            (0, 8): EndSpaceVertical(),
+            (0, 9): EndSpaceVerticalCell(),
+            (0, 10): EndSpaceVertical(),
+
+            (1, 0): Corner.CornerTopLeft(),
+            (1, 1): EdgeHorizontal(),
+            (1, 2): Corner.CornerInside(),
+            (1, 3): EdgeHorizontal(),
+            (1, 4): Corner.CornerInside(),
+            (1, 5): EdgeHorizontal(),
+            (1, 6): Corner.CornerInside(),
+            (1, 7): EdgeHorizontal(),
+            (1, 8): Corner.CornerInside(),
+            (1, 9): EdgeHorizontal(),
+            (1, 10): Corner.CornerTopRight(),
+
+            (2, 0): EdgeVertical(),
+            (2, 1): Cell(Square('black')),
+            (2, 2): EdgeVertical(),
+            (2, 3): Cell(),
+            (2, 4): EdgeVertical(),
+            (2, 5): Cell(),
+            (2, 6): EdgeVertical(),
+            (2, 7): Cell(Square('black')),
+            (2, 8): EdgeVertical(),
+            (2, 9): Cell(),
+            (2, 10): EdgeVertical(),
+
+            (3, 0): Corner.CornerInside(),
+            (3, 1): EdgeHorizontal(),
+            (3, 2): Corner.CornerInside(isMandatory=True),
+            (3, 3): EdgeHorizontal(),
+            (3, 4): Corner.CornerInside(),
+            (3, 5): EdgeHorizontal(),
+            (3, 6): Corner.CornerInside(),
+            (3, 7): EdgeHorizontal(),
+            (3, 8): Corner.CornerInside(),
+            (3, 9): EdgeHorizontal(),
+            (3, 10): Corner.CornerInside(),
+
+            (4, 0): EdgeVertical(),
+            (4, 1): Cell(Square('purple')),
+            (4, 2): EdgeVertical(),
+            (4, 3): Cell(),
+            (4, 4): EdgeVertical(),
+            (4, 5): Cell(numberOfTriangles=2),
+            (4, 6): EdgeGapVertical(),
+            (4, 7): Cell(),
+            (4, 8): EdgeVertical(),
+            (4, 9): Cell(numberOfTriangles=2),
+            (4, 10): EdgeVertical(),
+
+            (5, 0): Corner.CornerInside(),
+            (5, 1): EdgeHorizontal(),
+            (5, 2): Corner.CornerInside(),
+            (5, 3): EdgeHorizontal(),
+            (5, 4): Corner.CornerInside(),
+            (5, 5): EdgeHorizontal(),
+            (5, 6): Corner.CornerInside(),
+            (5, 7): EdgeHorizontal(),
+            (5, 8): Corner.CornerInside(),
+            (5, 9): EdgeHorizontal(),
+            (5, 10): Corner.CornerInside(isMandatory=True),
+
+            (6, 0): EdgeVertical(),
+            (6, 1): Cell(),
+            (6, 2): EdgeGapVertical(),
+            (6, 3): Cell(),
+            (6, 4): EdgeVertical(),
+            (6, 5): Cell(numberOfTriangles=3),
+            (6, 6): EdgeVertical(),
+            (6, 7): Cell(Square('purple')),
+            (6, 8): EdgeVertical(),
+            (6, 9): Cell(Square('orange')),
+            (6, 10): EdgeVertical(),
+
+            (7, 0): Corner.CornerInside(),
+            (7, 1): EdgeHorizontal(),
+            (7, 2): Corner.CornerInside(),
+            (7, 3): EdgeHorizontal(),
+            (7, 4): Corner.CornerInside(),
+            (7, 5): EdgeHorizontal(),
+            (7, 6): Corner.CornerInside(),
+            (7, 7): EdgeHorizontal(),
+            (7, 8): Corner.CornerInside(),
+            (7, 9): EdgeGapHorizontal(),
+            (7, 10): Corner.CornerInside(),
+
+            (8, 0): EdgeVertical(),
+            (8, 1): Cell(Square('white')),
+            (8, 2): EdgeVertical(),
+            (8, 3): Cell(),
+            (8, 4): EdgeVertical(),
+            (8, 5): Cell(),
+            (8, 6): EdgeVertical(),
+            (8, 7): Cell(),
+            (8, 8): EdgeVertical(),
+            (8, 9): Cell(),
+            (8, 10): EdgeVertical(),
+
+            (9, 0): Corner.CornerBottomLeft(),
+            (9, 1): EdgeHorizontal(),
+            (9, 2): Corner.CornerInside(),
+            (9, 3): EdgeHorizontal(),
+            (9, 4): Corner.CornerInside(),
+            (9, 5): EdgeHorizontal(isMandatory=True),
+            (9, 6): Corner.CornerInside(),
+            (9, 7): EdgeHorizontal(),
+            (9, 8): Corner.CornerInside(),
+            (9, 9): EdgeHorizontal(),
+            (9, 10): Corner.CornerBottomRight(),
+        },
+        'endPosition': [0, 2]
+    },
+    # Level 26
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -3314,7 +3845,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 22
+    # Level 27
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
@@ -3418,7 +3949,7 @@ LEVELS = [
         },
         'endPosition': [0, 9]
     },
-    # Level 23
+    # Level 28
     {
         'data': {
             (0, 0): EndSpaceVertical(),
@@ -3543,7 +4074,7 @@ LEVELS = [
         },
         'endPosition': [0, 8]
     },
-    # Level 24
+    # Level 29
     {
         'data': {
             (0, 0): EndLeft(),
@@ -3647,7 +4178,7 @@ LEVELS = [
         },
         'endPosition': [0, 0]
     },
-    # Level 25
+    # Level 30
     {
         'data': {
             (0, 0): Corner.CornerTopLeft(),
