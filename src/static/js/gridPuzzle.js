@@ -644,7 +644,7 @@ class GridPuzzle
             let triangles = document.querySelectorAll('#layer-1 .cell[data-row="' + position[0] + '"][data-column="' + position[1] + '"] .triangle');
             for(let i = 0; i < triangles.length; i++)
             {
-                triangles[i].classList.toggle('show-error-triangle', true);
+                triangles[i].classList.toggle('show-error', true);
             }
         }
 
