@@ -14,7 +14,7 @@ python = "^3.11"
 thecodelabs-baseutils = {version = "*", source = "TheCodeLabs" }
 thecodelabs-flaskutils = {version = "*", source = "TheCodeLabs" }
 flask = "3.0.3"
-Flask-SocketIO = "5.3.6"
+Flask-SocketIO = "5.3.7"
 gevent = "24.2.1"
 
 [tool.poetry.dev-dependencies]
