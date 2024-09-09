@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "GridPuzzle"
-version = "1.9.0"
+version = "1.10.0"
 description = "Grid puzzle game inspired by The Witness."
 authors = ["deadlocker8"]
 
